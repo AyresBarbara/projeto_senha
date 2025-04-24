@@ -1,0 +1,19 @@
+<!-- relatorios.page.html -->
+<ion-header>
+  <ion-toolbar><ion-title>Relatórios</ion-title></ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="loadRelatorios()" [disabled]="loading">
+    Carregar Relatórios
+  </ion-button>
+
+  <div *ngIf="diario">
+    <h2>Relatório Diário</h2>
+    <pre>{{ diario | json }}</pre>
+  </div>
+  <div *ngIf="mensal">
+    <h2>Relatório Mensal</h2>
+    <pre>{{ mensal | json }}</pre>
+  </div>
+</ion-content>

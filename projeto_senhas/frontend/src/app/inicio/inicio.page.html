@@ -1,0 +1,27 @@
+<!-- inicio.page.html -->
+<ion-header>
+  <ion-toolbar><ion-title>Início</ion-title></ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="emitir('SP')" [disabled]="loading">
+    Emitir Senha Prioritária
+  </ion-button>
+  <ion-button expand="block" (click)="emitir('SG')" [disabled]="loading">
+    Emitir Senha Geral
+  </ion-button>
+  <ion-button expand="block" (click)="emitir('SE')" [disabled]="loading">
+    Emitir Senha Exames
+  </ion-button>
+
+  <div *ngIf="ultimaSenha" class="ion-margin-top">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Sua Senha</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ ultimaSenha.numero }} ({{ ultimaSenha.tipo }})
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
