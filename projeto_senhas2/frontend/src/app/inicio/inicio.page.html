@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sistema de Senhas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Botão para gerar senha -->
+  <ion-button expand="full" (click)="emitirSenha('SP')">Gerar Senha SP</ion-button>
+  <ion-button expand="full" (click)="emitirSenha('SG')">Gerar Senha SG</ion-button>
+  <ion-button expand="full" (click)="emitirSenha('SE')">Gerar Senha SE</ion-button>
+
+  <!-- Botões de navegação -->
+  <ion-button [routerLink]="['/atendimento']" expand="full">Ir para Atendimento</ion-button>
+  <ion-button [routerLink]="['/relatorios']" expand="full">Ir para Relatórios</ion-button>
+
+  <!-- Exibindo a última senha gerada -->
+  <div *ngIf="ultimaSenha" class="ion-margin-top">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Sua Senha</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ ultimaSenha.numero }} ({{ ultimaSenha.tipo }})
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Atendimento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="chamar()">Chamar Próxima Senha</ion-button>
+
+  <!-- Histórico de senhas atendidas -->
+  <ion-list>
+    <ion-item *ngFor="let senha of historico">
+      <ion-label>
+        {{ senha.numero }} - {{ senha.tipo }}
+      </ion-label>
+    </ion-item>    
+  </ion-list>
+
+  <!-- Botões de navegação -->
+  <ion-button [routerLink]="['/inicio']" expand="full">Voltar ao Início</ion-button>
+  <ion-button [routerLink]="['/relatorios']" expand="full">Ir para Relatórios</ion-button>
+</ion-content>
